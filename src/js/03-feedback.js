@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Очищення сховища та полів форми під час сабміту форми
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+    if (emailInput.value.trim() === '' || messageInput.value.trim() === '') {
+      alert('Форма не має сабмітитись з незаповненими полями.');
+      return;
+    }
     console.log({
       email: emailInput.value,
       message: messageInput.value,
